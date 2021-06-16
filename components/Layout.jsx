@@ -1,6 +1,7 @@
 import { signOut } from '@lib/firebase';
 import { useAuth } from '@contexts/auth';
 import styles from '@styles/Layout.module.scss';
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
   const [user] = useAuth();
@@ -9,7 +10,7 @@ const Layout = ({ children }) => {
     <div className={styles.Layout}>
       <nav>
         <span>
-          <a href="/">My Next.js Blog</a>
+          <Link href="/">My Next.js Blog</Link>
         </span>
         {user && (
           <span>

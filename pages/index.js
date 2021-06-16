@@ -4,6 +4,7 @@
 import { getPosts } from '@lib/firebase';
 import styles from '@styles/index.module.scss';
 import { Layout } from '@components';
+import Link from 'next/link'
 
 const getFormattedDate = (milliseconds) => {
   const formatOptions = {
@@ -32,7 +33,7 @@ const HomePage = ({ posts }) => (
               __html: `${post.content.substring(0, 200)}...`,
             }}
           ></p>
-          <a href={`/post/${post.slug}`}>Continue Reading</a>
+          <Link href={`/post/${post.slug}`}>Continue Reading</Link>
 
         </div>
       </article>
@@ -47,7 +48,7 @@ const HomePage = ({ posts }) => (
 // You can read more about this in the Next.js docs at:
 // https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await getPosts();
 
   return {
