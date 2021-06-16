@@ -4,10 +4,13 @@
 // https://nextjs.org/docs/advanced-features/module-path-aliases
 
 {
-    "compilerOptions": {
-      "baseUrl": "./",
-      "paths": {
-        "@styles/*": ["styles/*"]
-      }
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@components": ["components"],
+      "@contexts/*": ["contexts/*"],
+      "@lib/*": ["lib/*"],
+      "@styles/*": ["styles/*"]
     }
   }
+}
