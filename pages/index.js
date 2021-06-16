@@ -48,7 +48,7 @@ const HomePage = ({ posts }) => (
 // You can read more about this in the Next.js docs at:
 // https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const posts = await getPosts();
 
   return {
